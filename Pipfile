@@ -5,8 +5,8 @@ name = "pypi"
 
 [packages]
 fastapi = "0.105"
-llama-index = "0.10.15"
-langchain = "0.1.7"
+llama-index = "0.10.16"
+langchain = "0.1.11"
 pydantic = "~=1.10"
 python-dotenv = "~=1.0"
 python-multipart = "~=0.0"
