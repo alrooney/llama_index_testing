@@ -18,11 +18,11 @@ app = FastAPI()
 @app.get("/load/{id}")
 async def load(id: int):
     documents = load_documents()
-    # service_context, token_counter = _setup_service_context()
-    token_counter, callback_manager = _setup_token_counter()
+    # service_context, token_counter = _setup_service_context() # This works
+    token_counter, callback_manager = _setup_token_counter() # This does not work
 
-    # index = VectorStoreIndex.from_documents([Document(text=documents[id]["text"])], service_context = service_context)
-    index = VectorStoreIndex.from_documents([Document(text=documents[id]["text"])], callback_manager=callback_manager)
+    # index = VectorStoreIndex.from_documents([Document(text=documents[id]["text"])], service_context = service_context) # This works
+    index = VectorStoreIndex.from_documents([Document(text=documents[id]["text"])], callback_manager=callback_manager) # This does not work
     
     logging.info(f"Loaded document with id {id}. Token count: {token_counter.total_embedding_token_count}")
 
